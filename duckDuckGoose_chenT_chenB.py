@@ -1,23 +1,40 @@
 from random import random
 
-list = open('occupations.csv', 'r')
-list = list.read()
-list = list.split('\n')
+data = open('occupations.csv', 'r')
+data = data.read()
+data = data.split('\n')
 
 # Removing first row!
-list.pop(0)
-total = float(list.pop(-2).split(',')[1])
+data.pop(0)
+total = float(data.pop(-2).split(',')[1])
 
-for i in range(len(list)):
-    if list[i] == '':
-        list.pop(i)
-    elif list[i].count(',') > 1:
-        list[i] = list[i].split('",')
+for i in range(len(data)):
+    if data[i] == '':
+        data.pop(i)
+    elif data[i].count(',') > 1:
+        data[i] = data[i].split('",')
     else:
-        list[i] = list[i].split(',')
+        data[i] = data[i].split(',')
 
 occupations = {}
-for l in list:
+for l in data:
     occupations[l[0]] = float(l[1])
 
 print occupations
+
+def random_average():
+    # generate random number
+    bar = 0 # interval of the total that the weighted percentage holds for each occupation
+    randvalue = random() * total #random float value from the interval [0,99.8)
+    keys = list(occupations.keys())
+    #print(occupations.values())
+    for key in keys:
+        value = occupations[key]
+        bar += value
+        if (randvalue <= bar):
+            #print(key, occupations[key])
+            return key
+
+
+print random_average()
+print random_average()
