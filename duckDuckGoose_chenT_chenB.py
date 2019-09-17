@@ -44,4 +44,5 @@ def random_average():
 
 
 #print random_average()
-print random_average()
+#print random_average()
+#print random_average()
