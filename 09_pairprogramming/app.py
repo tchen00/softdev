@@ -7,11 +7,11 @@ def hello_word():
     return "Hello World"
 
 coll = {0,1,1,2,3,5,8}
-@app.route("/stub.html")
+@app.route("/my_foist_template")
     #return "hello"
 def test_tmplt():
     return render_template(
-    'stub.html',
+    'model_tmplt.html',
     foo = "fun",
     collection = coll)
 
