@@ -6,14 +6,15 @@
     </title>
   </head>
   <body>
-    Descriptive Heading ---
-
+    <table>
     {% for item in collection %}
-    {{ item }}
+    <tr>
 
-    <br>
+    <th>{{ item }}</th>
+    <th>{{ collection[item]}}</th>
+    </tr>
 
     {% endfor %}
-    
-  </body>
+  </table>
+</body>
 </html>
