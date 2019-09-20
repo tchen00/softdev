@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>
-      Testing
+      {{ foo }}
     </title>
   </head>
   <body>
-    Hello World!
+    {% for item in collection %}
+    {{ item }}
+    <br>
+    {% endfor %}
   </body>
 </html>
