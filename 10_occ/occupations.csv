@@ -1,24 +1,24 @@
-Job Class,Percentage
-Management,6.1,"https://en.wikipedia.org/wiki/Management"
-Business and Financial operations,5,"https://www.bls.gov/oes/2017/may/oes130000.htm"
-Computer and Mathematical,2.7,"https://www.bls.gov/oes/current/oes150000.htm"
-Architecture and Engineering,1.7,"https://www.caee.utexas.edu/architectural/whatisarche"
-"Life, Physical and Social Science",0.9,"https://www.bls.gov/oes/current/oes190000.htm"
-Community and Social Service,1.6,"https://www.bls.gov/oes/current/oes210000.htm"
-Legal,0.8,"https://www.bls.gov/ooh/legal/home.htm"
-"Education, training and library",6.1,"https://www.bls.gov/ooh/education-training-and-library/home.htm"
-"Arts, design, entertainment, sports and media",1.7,"https://www.bls.gov/oes/current/oes270000.htm"
-Healthcare practioners and technical,5.5,"https://studentscholarships.org/salary/620/healthcare_practitioners_and_technical_workers.php#sthash.yLbwdV4G.dpbs"
-Healthcare support,2.8,"http://www.careers.org/occupations/field/31/healthcare-support"
-Protective service,2.3,"https://www.bls.gov/ooh/protective-service/home.htm"
-Food preparation and serving,8.3,"https://www.bls.gov/ooh/food-preparation-and-serving/home.htm"
-Building and grounds cleaning and maintenance,3.7,"https://www.bls.gov/ooh/building-and-grounds-cleaning/home.htm?view_full"
-Personal care and service,4,"https://www.bls.gov/ooh/personal-care-and-service/home.htm"
-Sales,10.2,"https://www.bls.gov/ooh/sales/home.htm"
-Office and administrative support,15.1,"https://www.bls.gov/ooh/office-and-administrative-support/home.htm"
-"Farming, fishing and forestry",0.6,"https://www.bls.gov/ooh/farming-fishing-and-forestry/home.htm"
-Construction and extraction,4.3,"https://www.bls.gov/ooh/construction-and-extraction/home.htm"
-"Installation, maintenance and repair",3.8,"https://www.bls.gov/ooh/installation-maintenance-and-repair/home.htm"
-Production,6.1,"https://www.bls.gov/oes/current/oes510000.htm"
-Transportation and material moving,6.5,"https://www.bls.gov/ooh/transportation-and-material-moving/home.htm"
-Total,99.8
+Job Class,Percentage,Link
+Management,6.1,https://www.thebalancecareers.com/getting-a-first-management-job-2275109
+Business and Financial operations,5,https://collegegrad.com/careers/business-and-financial
+Computer and Mathematical,2.7,https://www.afternerd.com/blog/learn-computer-science/
+Architecture and Engineering,1.7,https://www.afternerd.com/blog/learn-computer-science/
+"Life, Physical and Social Science",0.9,https://medium.com/life-science-startups/how-to-start-a-life-science-company-2401f2889339
+Community and Social Service,1.6,https://www.learnhowtobecome.org/social-worker/
+Legal,0.8,https://www.learnhowtobecome.org/lawyer/
+"Education, training and library",6.1,https://www.learnhowtobecome.org/teacher/
+"Arts, design, entertainment, sports and media",1.7, https://www.forbes.com/sites/under30network/2016/03/16/5-brutally-honest-hacks-to-start-a-media-career/
+Healthcare practioners and technical,5.5,https://www.artistsnetwork.com/art-inspiration/getting-started-artist-inspiration/
+Healthcare support,2.8,https://www.verywellhealth.com/break-into-a-healthcare-career-1736038
+Protective service,2.3,https://www.learnhowtobecome.org/police-officer/
+Food preparation and serving,8.3,https://collegegrad.com/careers/food-preparation-workers
+Building and grounds cleaning and maintenance,3.7,https://study.com/articles/Become_a_Labor_Maintenance_Worker_Step-by-Step_Career_Guide.html
+Personal care and service,4,https://www.learnhowtobecome.org/personal-trainer/
+Sales,10.2,https://blog.hubspot.com/sales/habits-to-become-a-more-effective-salesperson
+Office and administrative support,15.1,https://study.com/articles/How_to_Become_a_Certified_Office_Manager.html
+"Farming, fishing and forestry",0.6,https://money.howstuffworks.com/how-to-become-fishing-guide.htm
+Construction and extraction,4.3,https://work.chron.com/training-needed-become-construction-worker-15831.html
+"Installation, maintenance and repair",3.8,https://www.vocationaltraininghq.com/how-to-become/appliance-repair-technician/
+Production,6.1,https://study.com/become_a_production_assistant.htmlv
+Transportation and material moving,6.5,https://www.brightnetwork.co.uk/career-path-guides/technology-it-software-development/top-skills-excel-technology-sector/what-it-means-be-technical-and-how-become-better-it/
+Total,99.8,"dd"

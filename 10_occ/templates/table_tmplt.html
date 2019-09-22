@@ -27,11 +27,12 @@
     <br>
     <b>Tablified Occupations Data:</b>
     <table>
-    <tr> <th> Job Class  </th> <th> Percentage </th> </tr>
+    <tr> <th> Job Class  </th> <th> Percentage </th><th> Get Started </th> </tr>
     {% for item in collection %}
     <tr>
       <th>{{ item }}</th>
-      <th>{{ collection[item]}}</th>
+      <th>{{ collection[item][0]}}</th>
+      <th>{{ collection[item][1]}}</th>
     </tr>
     {% endfor %}
     <tr> <th> Total  </th> <th> 99.8 </th> </tr>
