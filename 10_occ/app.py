@@ -1,3 +1,8 @@
+# Rubinstein -- Tammy Chen and Henry Liu
+# SoftDev1 pd9
+# K #10: Jinja Tuning
+# 2019-09-21
+
 from flask import Flask, render_template
 # HENRY'S CODE!
 import csv
