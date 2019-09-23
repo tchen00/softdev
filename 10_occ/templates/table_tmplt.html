@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -28,11 +29,11 @@
     <b>Tablified Occupations Data:</b>
     <table>
     <tr> <th> Job Class  </th> <th> Percentage </th><th> Get Started </th> </tr>
-    {% for item in collection %}
+    {% for item in collection %}<!--Connects back to python file and looks for the collection and then loops it-->
     <tr>
       <th>{{ item }}</th>
       <th>{{ collection[item][0]}}</th>
-      <th> <a href= {{collection[item][1]}} > Click Me! </a></th>
+      <th> <a href= {{collection[item][1]}} > Click Me! </a></th><!--adds the link-->
     </tr>
     {% endfor %}
     <tr> <th> Total  </th> <th> 99.8 </th> </tr>
