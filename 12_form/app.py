@@ -1,20 +1,25 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
     #return "hello"
-    return render_template(
-        'request.html'
-    )
-
+    #return render_template(
+    #    'request.html'
+    #)
+    #return "hello"
+    return redirect('/auth')
 
 @app.route("/auth")
 def authenticate():
     print("//////////////|\\\\\\\\\\\\\\")
-    print(app)
+    print("****DIAG: request obj ****")
+    print(request)
+    #print(app)
+    print("****DIAG: request args obj ****")
     print(request.args)
+
 
     #if request.method == 'POST':
     #    return redirect
