@@ -9,7 +9,7 @@ def home():
     #    'request.html'
     #)
     #return "hello"
-    return redirect('/auth')
+    return render_template("request.html")
 
 @app.route("/auth")
 def authenticate():
@@ -24,7 +24,9 @@ def authenticate():
     #if request.method == 'POST':
     #    return redirect
     return render_template(
-        'request.html'
+        'response.html',
+        username = request.args['username'],
+        method = request.method
     )
 
 if __name__ == "__main__":
