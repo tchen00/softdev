@@ -9,20 +9,19 @@ def home():
     #    'request.html'
     #)
     #return "hello"
-    return render_template("request.html")
+    return render_template("request.html") #displays the form
 
 @app.route("/auth")
 def authenticate():
+    '''
     print("//////////////|\\\\\\\\\\\\\\")
     print("****DIAG: request obj ****")
     print(request)
-    #print(app)
+    print(app)
     print("****DIAG: request args obj ****")
     print(request.args)
-
-
-    #if request.method == 'POST':
-    #    return redirect
+    '''
+    #redirect to the response.html & input the parameters
     return render_template(
         'response.html',
         username = request.args['username'],
