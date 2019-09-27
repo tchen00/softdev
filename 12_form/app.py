@@ -1,4 +1,9 @@
-from flask import Flask, render_template, request, redirect
+# Tammy Chen & Leia Park
+# SoftDev1 pd9
+# K12 -- Echo Echo Echo
+# 2019-09-26
+
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
