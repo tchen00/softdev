@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>
+      {% block title %}
+
+      {% endblock %}
+	  </title>
+    <h1>{% block head %}
+
+    {% endblock %}</h1>
+  </head>
+  <center>
+    <body>
+      {% block message %}
+
+      {% endblock %}
+      <br> <br>
+      {% block body %}
+
+      {% endblock %}
+      <br> <br> <br> <br>
+      {% block footer %}
+      Copyright &copy Team Flag
+      {% endblock %}
+    </body>
+  </center>
+</html>
