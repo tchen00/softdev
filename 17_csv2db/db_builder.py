@@ -14,7 +14,7 @@ c = db.cursor()               #facilitate db ops
 
 #==========================================================
 
-with open('courses.csv') as course:
+with open('courses.csv','r',newline="") as course:
     reader = csv.DictReader(course)
 
     command = "CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER);"
@@ -24,7 +24,7 @@ with open('courses.csv') as course:
         instr = "INSERT INTO courses VALUES ('{}', {}, {});".format(row['code'], row['mark'], row['id'])
         c.execute(instr)
 
-with open('students.csv') as student:
+with open('students.csv','r',newline="") as student:
     reader = csv.DictReader(student)
 
     command = "CREATE TABLE students (name TEXT, age INTEGER, id INTEGER);"
@@ -39,12 +39,14 @@ command = ""          # test SQL stmt in sqlite3 shell, save as string
 c.execute(command)    # run SQL statement
 """
 
+"""
 # TESTING CODE!!!
 c.execute("SELECT * FROM students;")
 c.execute("SELECT * FROM courses;")
 rows = c.fetchall()
 for row in rows:
     print(row)
+"""
 #==========================================================
 
 db.commit() #save changes
