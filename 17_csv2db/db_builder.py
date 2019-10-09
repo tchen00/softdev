@@ -39,14 +39,15 @@ command = ""          # test SQL stmt in sqlite3 shell, save as string
 c.execute(command)    # run SQL statement
 """
 
-"""
 # TESTING CODE!!!
+"""
 c.execute("SELECT * FROM students;")
 c.execute("SELECT * FROM courses;")
 rows = c.fetchall()
 for row in rows:
     print(row)
 """
+
 #==========================================================
 
 db.commit() #save changes
