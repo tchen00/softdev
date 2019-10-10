@@ -48,6 +48,11 @@ for row in rows:
     print(row)
 """
 
+q = "SELECT name, students.id, mark FROM students, courses WHERE students.id = courses.id;"
+
+foo = c.execute(q)
+print (foo)
+
 #==========================================================
 
 db.commit() #save changes
