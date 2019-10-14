@@ -51,7 +51,10 @@ for row in rows:
 q = "SELECT name, students.id, mark FROM students, courses WHERE students.id = courses.id;"
 
 foo = c.execute(q)
-print (foo)
+
+for bar in foo:
+    print (bar)
+#print (foo)
 
 #==========================================================
 
