@@ -5,6 +5,7 @@
 
 import sqlite3 # enable control of an sqlite database
 import csv # faciliate CSV I/O
+import sys
 
 DB_FILE = "school.db"
 
@@ -66,12 +67,28 @@ def addCourses(code, id, mark):
     c.execute('INSERT INTO courses VALUES(?,?,?)', (code, id, mark))
     c.execute('SELECT * FROM courses')
 
-addCourses("health", 12, 1)
-initDict()
-studentsGrades()
-studentsAverages()
-printAverages()
-createAvgTable()
+#addCourses("health", 12, 1)
+def main():
+    print("Do you want to add a couse? (y/n)")
+    response = input()
+    if (response == "y"):
+        print("Enter course code: ")
+        code = input()
+        print("Enter course id: ")
+        id = input()
+        print("Enter course mark: ")
+        mark = input()
+        addCourses(code, id, mark)
+
+    initDict()
+    studentsGrades()
+    studentsAverages()
+    printAverages()
+    createAvgTable()
+
+
+main()
+
 
 db.commit() # save changes
 db.close() # close database
