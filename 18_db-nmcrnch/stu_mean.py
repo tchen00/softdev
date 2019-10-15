@@ -63,11 +63,8 @@ def createAvgTable():
 # function to faciliate adding rows to the courses table
 def addCourses(code, id, mark):
     # adds a new row given the parameters code (string), id (integer), and mark (integer)
-    code = '\"{}\"'.format(code)
-    command = (code, id, mark)
-    c.execute('INSERT INTO courses VALUES(?,?,?)', command)
+    c.execute('INSERT INTO courses VALUES(?,?,?)', (code, id, mark))
     c.execute('SELECT * FROM courses')
-    #print("done")
 
 addCourses("health", 12, 1)
 initDict()
