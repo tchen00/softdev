@@ -1,42 +1,41 @@
-html {
-  background: #858585;
+body {
+  background-color: #858585;
   font-family: Arial;
 }
-
 h1 {
   background-color: #a3a3a3;
   color: #FFFFFF;
-  text-align: center; <<
+  text-align: center;
+  margin: 0px;
 }
-
+.sidebar {
+  float: left;
+  width:180px;
+  height:500px;
+}
+h3 {
+  margin: 10px;
+  color: #000000;
+}
 ul {
   list-style-type: none;
-  padding-left: 0;
+  margin: 10px;
+  padding: 0;
 }
-
-li a {
+a {
   color: #d1d1d1;
   text-decoration: none;
 }
-
-#left {
-  float: left;
-  padding-right: 100px;
+h2 {
+  margin: 10px;
+  font-family: Arial;
 }
-
-#right {
-  float: left;
-  width: 75%;
+.text {
+  font-family: Arial;
 }
-
-#copyright{
-  float: right;
+.footer {
   background-color: #5e5e5e;
-  padding-left: 100%;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 10px;
   color: #858585;
   text-align: right;
-  white-space: nowrap;
 }
