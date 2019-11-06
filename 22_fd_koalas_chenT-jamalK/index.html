@@ -1,3 +1,10 @@
+<!--
+Team koalas -- Tammy Chen and Kazi Jamal
+SoftDev1 pd9
+K22 -- Who Does Frame Work For?
+2019-11-07
+-->
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +16,7 @@
 
   <body>
 
-    <div class="top-bar" id="backup">
+    <header class="top-bar" id="backup">
       <div class="top-bar-left">
       	<ul class="dropdown menu" data-dropdown-menu>
       	  <li class="menu-text">Team Koalas -- Tammy Chen & Kazi Jamal</li>
@@ -23,12 +30,11 @@
 
       <div class="top-bar-right">
       	<ul class="menu">
-      	  <li><input type="search" placeholder="Search"></li>
+      	  <li><input type="search" placeholder="Nothing to search here"></li>
       	  <li><button type="button" class="button">Search</button></li>
       	</ul>
       </div>
-
-    </div>
+    </header>
 
     <div class="callout success text-center py-5">
       <h1 class="subheader">Team koalas Presents</h1>
@@ -46,7 +52,7 @@
             </div>
             <div class="medium-6 cell">
               <label>Password
-                <input type="text" placeholder="enter (size of 6)">
+                <input type="password" placeholder="enter (size of 6)">
               </label>
             </div>
             <div class="float-center">
@@ -56,80 +62,71 @@
                 <input id="checkbox22" type="checkbox"><label for="checkbox22">Checkbox 2</label>
                 <input id="checkbox32" type="checkbox"><label for="checkbox32">Checkbox 3</label>
               </fieldset>
-          </div>
+            </div>
           </div>
         </div>
       </form>
-    <div>
+    </div>
 
-    <div id="switch" class="callout warning text-center">
-
+    <div id="switches" class="callout warning text-center">
       <h4>Activate the switch to become a 10x programmer</h4>
       <div class="switch large">
-    	   <input class="switch-input" id="switch" type="checkbox" name="switch">
-    	    <label class="switch-paddle" for="switch">
-    	       <span class="show-for-sr">Become 10x Programmer</span>
-    	    </label>
+	<input class="switch-input" id="switch" type="radio" name="switch">
+	<label class="switch-paddle" for="switch">
+	  <span class="show-for-sr">Become 10x Programmer</span>
+	</label>
       </div>
-
       <div class="primary progress">
-      	<div class="progress-meter" style="width: 75%">
-      	  <p class="progress-meter-text">Big Brain 75% activated</p>
-      	</div>
+	<div class="progress-meter" style="width: 75%">
+	  <p class="progress-meter-text">Big Brain 75% activated</p>
+	</div>
       </div>
-
     </div>
 
     <div id="buttons" class="callout primary text-center">
       <h4>You want buttons? We got all the buttons!</h4>
       <button type="button" class="success button">Save</button>
       <button type="button" class="alert button">Delete</button>
-      <a class="tiny button" href="#0">So Tiny</a>
-      <a class="small button" href="#0">So Small</a>
-      <a class="large button" href="#0">So Large</a>
-      <a class="expanded button" href="#0">Such Expand Much Wow</a>
+      <a class="tiny button">So Tiny</a>
+      <a class="small button">So Small</a>
+      <a class="large button">So Large</a>
+      <a class="expanded button">Such Expand Much Wow</a>
     </div>
 
     <div id="video" class="text-center">
       <h4>Heres a video!</h4>
       <div class="responsive-embed">
-      	<iframe src="https://www.youtube.com/embed/oI3ADcDH0Uc"></iframe>
+	<iframe src="https://www.youtube.com/embed/oI3ADcDH0Uc"></iframe>
       </div>
       <h5>Fun Fact: Koalas spend <span class="stat">90%</span> of their day sleeping. Thats a <i>koality</i> sleep!</h5>
     </div>
 
-    <div class="callout alert text-center">
+    <div class="callout secondary text-center">
       <h6>Here, try going to a different page</h6>
       <ul class="pagination" role="navigation" aria-label="Pagination">
-      	<li class="disabled">Previous <span class="show-for-sr">page</span></li>
-      	<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-      	<li><a href="#0" aria-label="Page 2">2</a></li>
-      	<li><a href="#0" aria-label="Page 3">3</a></li>
-      	<li><a href="#0" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+	<li class="disabled">Previous <span class="show-for-sr">page</span></li>
+	<li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+	<li><a aria-label="Page 2">2</a></li>
+	<li><a aria-label="Page 3">3</a></li>
+	<li><a aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
       </ul>
       <h6>Sike theres only one page</h6>
     </div>
 
     <div class="text-center" id="howto">
       <h2>How to Use Foundation w/o Downloading Everthing </h2>
-        <p> Add this into the head of your HTML file & you are good to go! </p>
-        <code>
-          < link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" >
-        </code>
+      <p> Add this into the head of your HTML file & you are good to go! </p>
+      <code>
+        &ltlink rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css"&gt
+      </code>
     </div>
 
-    <footer class="row">
-       <div class="large-12 columns">
-         <hr>
+    <hr>
 
-         <div class="row class="text-center"">
-           <div class="large-6 columns" class="text-center">
-             <p class="text-center">&copy; Koalas 2019!</p>
-             <p class="text-center"><a href="#backup">Go to Top</a></p>
-           </div>
-         </div>
-       </div>
-     </footer>
+    <footer class="callout alert text-center">
+      <p class="text-center">&copy; koalas 2019!</p>
+      <p class="text-center"><a href="#backup">Go to Top</a></p>
+    </footer>
   </body>
 
 </html>
