@@ -1,3 +1,5 @@
+
+
 /*
 var foo = function(n){
   return n;
@@ -24,6 +26,9 @@ var gcd = function(a,b){
   return gcd(a-b, b);
 }
 
+students = ['Manfred', 'Biraj', 'Tammy', 'Fluffy', 'Unicorn']
+
 var randomStudent = function(){
-  
+  var index = Math.floor(Math.random() * students.length);
+  return students[index];
 }
