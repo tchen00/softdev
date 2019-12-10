@@ -23,3 +23,7 @@ var gcd = function(a,b){
   if (a % b == 0) return b;
   return gcd(a-b, b);
 }
+
+var randomStudent = function(){
+  
+}
