@@ -1,3 +1,9 @@
+/*
+Team prefix -- Manfred Tan, Biraj Chowdhury, and Tammy Chen
+SoftDev1 pd9
+K27 -- Sequential Progression
+2019-12-10
+*/
 
 
 /*
