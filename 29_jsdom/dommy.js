@@ -85,6 +85,27 @@ var fb = document.getElementById("fb");
 fb.addEventListener("click", addFib2);
 
 /*
+var factorial = function(n){
+  if (n == 1) return 1;
+  return (n * factorial(n-1));
+};
+
+var fac_counter = 0;
+
+var addFac = function(e){
+    // adds next fibonacci into the list
+    var factorial = document.getElementById('factorial');
+    var newfac = document.createElement('li');
+    newfac.innerHTML = factorial(fac_counter);
+    fac_counter++;
+    factorial.appendChild( newfac );
+    console.log("hello");
+};
+
+var fc = document.getElementById("fc");
+fc.addEventListener("click", addFac);
+
+/*
 
 var removeItem = function(e){
 
