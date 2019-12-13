@@ -56,7 +56,7 @@ var fibonacci = function(n){
     return (fibonacci(n-1) + fibonacci(n-2));
 };
 
-var fib
+//var fib
 var addFib = function(e){
     // adds next fibonacci into the list
     var fiblist = document.getElementById('fiblist');
@@ -72,15 +72,13 @@ var addFib2 = function(e){
     var newfib = document.createElement('li');
     var children = fiblist.childNodes;
     var length = children.length;
-    if (length < 3){
-      newfib.innerHTML = 1;
-    }
-    else{
+    if (length < 3) newfib.innerHTML = 1; // essentially base case
+    else {
       // gets the last two fibs from the list (rather than a recursive loop, runs simple addition)
       newfib.innerHTML = parseInt(children[length - 1].innerHTML , 10) + parseInt(children[length - 2].innerHTML, 10);
     }
-    //console.log(children); 
-    fiblist.appendChild( newfib );
+    //console.log(children);
+    fiblist.appendChild(newfib); // adding child
 };
 
 var fb = document.getElementById("fb");
