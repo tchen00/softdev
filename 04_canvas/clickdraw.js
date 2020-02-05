@@ -1,3 +1,8 @@
+// Tammy Chen
+// SoftDev2 pd9
+// K04 -- I See a Red Door...
+// 2020-02-06
+
 var c = document.getElementById("slate")
 var ctx = c.getContext("2d")
 
