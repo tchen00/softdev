@@ -23,7 +23,7 @@ var add_ellipse = function(e){
 var fill_ellipse = (x,y) => {
   ctx.fillStyle = "#37D1FF";
   ctx.ellipse(x,y,5, 5, 0, 0, 2 * Math.PI);
-  ctx.fill(); // fills the interior of the path, will not work if the path has fewer than 3 points in it.
+  ctx.fill(); // Fills the interior of the path, will not work if the path has fewer than 3 points in it.
 
 }
 
