@@ -18,29 +18,44 @@ if (restaurants.count() == 0):
         restaurants.insert_one(loads(line))
 
 def select_borough(borough):
+    arr = []
     """ Returns all restaurants in a specified borough. """
-    return restaurants.find({"borough" : borough})
+    for i in restaurants.find({"borough" : borough}):
+	       arr.append(i)
+    return arr
 
 def select_zipCode(zipCode):
+    arr = []
     """ Returns all restaurants in a specified zip code. """
-    return restaurants.find({"address.zipcode" : zipCode})
+    for i in restaurants.find({"address.zipcode" : zipCode}):
+	       arr.append(i)
+    return arr
 
 def select_zip_grade(zipcode, grade):
+    arr = []
     ''' Returns all restaurants in a specified zip code and with a specified grade.'''
-    return restaurants.find({"address.zipcode" : zipcode, "grades.grade" : grade})
+    for i in restaurants.find({"address.zipcode" : zipcode, "grades.grade" : grade}):
+	       arr.append(i)
+    return arr
 
 def select_zip_score(zipcode, score):
+    arr = []
     '''Returns all restaurants in a specified zip code with a score below a specified threshold.'''
-    return restaurants.find({"address.zipcode": zipcode, "grades.score" : {"$lt" : score}})
+    for i in restaurants.find({"address.zipcode": zipcode, "grades.score" : {"$lt" : score}}):
+	       arr.append(i)
+    return arr
 
-def select_num_zip(zipcode, number):
-    '''Returns specified number of restaurants in given zip code.'''
-    return restaurants.find({"address.zipcode": zipcode}).limit(number)
+def select_borough_grade(borough, grade):
+    arr = []
+    '''Returns specified restaurants in borough with given grade.'''
+    for i in restaurants.find({"borough" : borough, "grades.0.grade" : grade})
+	       arr.append(i)
+    return arr
 
 print("--------------TESTING------------------")
 
-select_borough("Staten Island")
-select_zipCode("10282")
-select_zip_grade("10282", 'A')
-select_zip_score("10282", 200)
-select_num_zip("10282","50")
+print(select_borough("Staten Island"))
+print(select_zipCode("10282"))
+print(select_zip_grade("10282", 'A'))
+print(select_zip_score("10282", 200))
+print(select_borough_grade("Staten Island",'C'))
