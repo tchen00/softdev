@@ -48,7 +48,7 @@ def select_zip_score(zipcode, score):
 def select_borough_grade(borough, grade):
     arr = []
     '''Returns specified restaurants in borough with given grade.'''
-    for i in restaurants.find({"borough" : borough, "grades.0.grade" : grade})
+    for i in restaurants.find({"borough" : borough, "grades.0.grade" : grade}):
 	       arr.append(i)
     return arr
 
