@@ -39,9 +39,8 @@ def select_num_zip(zipcode, number):
 
 print("--------------TESTING------------------")
 
-print("------------ FINDING ALL RESTAURANTS IN STATEN ISLAND ------------")
-for rest in select_borough("Staten Island"):
-    for key, value in rest.items():
-        if key == "name":
-            print("{name: %s}" % value)
-    #print(rest)
+select_borough("Staten Island")
+select_zipCode("10282")
+select_zip_grade("10282", 'A')
+select_zip_score("10282", 200)
+select_num_zip("10282","50")
