@@ -16,3 +16,11 @@ if (history.count() == 0):
     content = file.readlines()
     for line in content:
         history.insert_one(loads(line))
+
+def event_date(date):
+    print(date)
+    for i in history.result.find({"event.date": date}):
+        pprint.pprint(i)
+        print("hello")
+        
+event_date("-300")
