@@ -53,7 +53,6 @@ def select_borough_grade(borough, grade):
     return arr
 
 print("--------------TESTING------------------")
-
 print(select_borough("Staten Island"))
 print(select_zipCode("10282"))
 print(select_zip_grade("10282", 'A'))
