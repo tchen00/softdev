@@ -3,6 +3,12 @@
 # K10: Import/Export Bank
 # 2020-03-04
 
+'''
+The dataset contains all nobel prize winners & their research. It includes information such as the year & category of the award. 
+LINK: http://api.nobelprize.org/v1/prize.json
+For our import mechanism, we read the dataset into a list and then used the imported json library to convert the dataset into a dictionary, which is then inserted into the database. We also imported pprint, which makes the information easier to read when printed.  
+'''
+
 import pprint, json 
 from json import loads
 from pymongo import MongoClient
