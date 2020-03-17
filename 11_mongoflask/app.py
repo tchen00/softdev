@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Team sleep - Tammy Chen & Alice Ni
 # SoftDev pd9
 # K11: Ay Mon Go Git It From Yer Flask
@@ -60,17 +59,3 @@ def year():
 if __name__=="__main__":
     app.debug = True
     app.run()
-=======
-from flask import Flask, render_template
-import pymongo, urllib.request, json, pprint
-from bson.json_util import loads
-import os 
-from script import *
-
-app = Flask(__name__)
-app.secret_key = os.urandom(32)
-
-@app.route('/', methods = ['GET', 'POST'])
-def home():
-    return render_template('form.html')
->>>>>>> 3b9aa0a74c41f984bc43370acf37cfdf12747a77
