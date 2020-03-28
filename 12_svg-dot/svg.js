@@ -1,3 +1,8 @@
+// Team "." - Tammy Chen & Joseph Lee
+// SoftDev pd9
+// K12: Connect the Dots
+// 2020-03-30
+
 var svg = document.getElementById("vimage");
 var clear = document.getElementById("clear");
 var path = null;
