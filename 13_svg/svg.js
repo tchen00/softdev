@@ -6,7 +6,7 @@
 var pic = document.getElementById('vimage');
 var clear_button = document.getElementById("clear");
 
-var draw = (e) => {
+var draw = function(e) {
   if (e.target == pic){
     var x = e.offsetX; // mouse xcor
     var y = e.offsetY; // mouse ycor
