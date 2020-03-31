@@ -80,12 +80,13 @@ var xtra = function(e){
 pic.addEventListener('click', draw);
 xtra_button.addEventListener('click', xtra);
 
-clear_button.addEventListener('click', clear);
 var clear = function(e){
   pic.innerHTML='';
   window.cancelAnimationFrame(id);
   id = 0;
 };
+
+clear_button.addEventListener('click', clear);
 
 move_button.addEventListener('click', function(e){
     window.cancelAnimationFrame(id);
