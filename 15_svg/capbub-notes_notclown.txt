@@ -1,0 +1,23 @@
+Team notclown - Tammy Chen & Derek Leung
+SoftDev pd9
+K15: Capture Bubble Toil Trouble
+2020-04-02
+
+v1
+- prediction: an alert of the word you clicked on will pop up
+- result: worked as expected; (when clicking on a table cell)
+
+v2
+- prediction: 3 alerts will pop up, first of the word in the cell, second of the HTML for the row, third of the HTML for the table
+- result: worked as expected; (when clicking the cell)
+
+v3:
+- prediction: 3 alerts will pop up (different order than 2), first the entire HTML of the table, second the word in the cell, third the HTML of the row
+- result: order correct!
+          when e.stopPropagation() gets uncommented, only one alert pops up (entire HTML of the table). this is likely b/c it is the first alert and the propagation ends.
+
+v4:
+- prediction: 3 alerts will pop up (different order from the other two), first the HTML of the table, second the HTML of the row, and third the word in the cell
+- result: order correct!
+          same as v3 -- when e.stopPropagation() gets uncommented, only one alert pops up (entire HTML of the table). this is likely b/c it is the first alert and the propagation ends.
+          order of event listeners does not matter

@@ -25,4 +25,3 @@ for (x=0; x < trs.length; x++) {
 }
 
 table.addEventListener('click', clicky, true);
-
