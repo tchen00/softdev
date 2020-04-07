@@ -1,0 +1,78 @@
+<!--
+Finding Namo: Tammy Chen and Grace Mao
+SoftDev2 pd9
+2020-4-8
+-->
+
+<!DOCTYPE html>
+<!--D3 demo: hardcoded bars removed, to be generated fr data-->
+<!--
+    Can yield a horizontal bar chart if properly bound to data
+    (steelblue bars, white number overlays)
+    ...but will yield only blank page at first.
+  -->
+<html>
+  <body>
+  <style>
+    .chart div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+    }
+  </style>
+  </body>
+
+  <div class="chart"></div>
+
+  <script src="http://d3js.org/d3.v5.min.js" charset="utf-8">
+
+  	// d3.select("body").transition().style("background-color","black"); -->
+
+  </script>
+</html>
+
+<!--------------------------------
+    Entering the following commands via console will
+    incrementally re-create your hardcoded chart...
+    //Init your data:
+    var data = [4, 8, 15, 16, 23, 42];
+    //Select your chart.
+    var chart = d3.select(".chart");
+    //Prepare for data join.
+    var bar = chart.selectAll("div");
+    (this defines selection to which you will join data)
+    //Join your data.
+    var barUpdate = bar.data(data);
+    //Instantiate new elements by appending to the “enter selection.”
+    var barEnter = barUpdate.enter().append("div");
+    //Set width of each bar proportional to its data value.
+    barEnter.style("width", function(d) {
+    return d * 10 + "px"; });
+    //Label each bar.
+    barEnter.text(function(d) { return d; });
+  -------------------------------->
+
+<!-- PREDICTIONS
+	* first initialize your dataset and input the chart you're using
+	* note: select chart through class
+	* "join" the data, not sure what this means, maybe primary key?
+	* loading data into what you joined it on (?)
+	* adding new elements using joined data
+	* setting the proportion between bars using styling
+	* label bar with text of data (d = data like e = event ?)
+    -->
+
+<!-- NOTES
+	* made the same chart as directory 0/
+	* nothing happens until barEnter is defined, where you append divs
+	* append bars each of max length
+	* entering the style causes them to become proportional
+	* d does reference the data item in your dataset
+	* bars appear small, when text added they expand
+	* much easier to change proportion
+	* bars seem to be responsive to size of screen
+	* without changing attributes, bars sart at max length
+    -->

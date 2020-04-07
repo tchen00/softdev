@@ -1,0 +1,13 @@
+- SVG charts created with smooth transition + interaction
+- bind arbitrary data to a DOM
+- Selections
+	- made easy with d3.selectAll(<tag>) etc
+	- can also be selected by attribute, class, ID etc
+	- event listeners !!!!!!! *read more later*
+- easy to debug with the console/inspector
+- TRANSITIONS
+	- animated, supports primitives and compound values
+	- ex: d3.select("body").transition().style("background-color", "black");
+		- background fades to black :o
+	- can also define functions for timing (i.e delay)
+		- right now extremely confusing, read up on it later
