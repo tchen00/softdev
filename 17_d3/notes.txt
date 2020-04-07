@@ -4,7 +4,9 @@ NOTES
 - Selections
 	- made easy with d3.selectAll(<tag>) etc
 	- can also be selected by attribute, class, ID etc
-	- event listeners !!!!!!! *read more later*
+	- event listeners
+  - selection.data (computes the enter, update & exit selection)
+  - selection.join (appends/removes the elements)
 - easy to debug with the console/inspector
 
 TRANSITIONS
@@ -16,7 +18,7 @@ TRANSITIONS
 
 D3: LEARN BY EXAMPLE
   import {chart as chart1} with {values as data} from "@d3/histogram"
-    - unqiue to Observable JS: with clause substitutes values array of numbers as data
+    - unique to Observable JS: with clause substitutes values array of numbers as data
   d3 & summary statistics
     - d3. count, d3. sum, d3. mean, d3. median
     - helpful for basic computations!
