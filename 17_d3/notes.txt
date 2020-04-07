@@ -1,3 +1,4 @@
+NOTES
 - SVG charts created with smooth transition + interaction
 - bind arbitrary data to a DOM
 - Selections
@@ -5,9 +6,20 @@
 	- can also be selected by attribute, class, ID etc
 	- event listeners !!!!!!! *read more later*
 - easy to debug with the console/inspector
-- TRANSITIONS
+
+TRANSITIONS
 	- animated, supports primitives and compound values
 	- ex: d3.select("body").transition().style("background-color", "black");
 		- background fades to black :o
 	- can also define functions for timing (i.e delay)
 		- right now extremely confusing, read up on it later
+
+D3: LEARN BY EXAMPLE
+  import {chart as chart1} with {values as data} from "@d3/histogram"
+    - unqiue to Observable JS: with clause substitutes values array of numbers as data
+  d3 & summary statistics
+    - d3. count, d3. sum, d3. mean, d3. median
+    - helpful for basic computations!
+  d3 & random
+    - d3-random: implements random number generators for various probability distributions
+    - d3.randomNormal: normal distribution of bell-curve
