@@ -8,8 +8,17 @@
     <body>
         <button id="render">Render</button>
         <button id="transition">Transition</button>
-        <script src="https://d3js.org/d3.v4.js"></script>
-        <script src="../static/d3.js"></script>
+        <br>
+        <div class="chart">
+        </div>
+        <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+
+        <script type="text/javascript" charset="utf-8">
+          var data = {{ csv }};
+          var heading = {{ dates|safe }};
+        </script>
+
+        <script src="{{ url_for('static', filename='d3.js') }}"></script>
     </body>
 
 </html>
