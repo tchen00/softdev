@@ -13,12 +13,12 @@ def parse():
     with open('covid.csv', 'r') as f:
         reader = csv.reader(f)
         for row in reader:
-            if (row[0][0] != 'd'): # not the first row
-                #date: <string>, values: <array> [new cases, hospitalized, deaths]
+            if (row[0][0] != 'D'): # not the first row
+                # date: <string>, values: <array> [new cases, hospitalized, deaths]
                 #print(row)
                 #print('DONE')
                 #print(type(row[0]))
-                dict[row[0]] = [int(row[1]), int(row[2]), int(row[3])] # DICTIONARY FORMAT -- date: [cases, hospitalized, deaths]
+                dict[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
         #print(dict)
     return dict
 
@@ -28,9 +28,9 @@ def root():
     #print(d)
     dates = list(d.keys())
     nums = list(d.values())
-    #print(dates)
-    print(nums[0][0])
-    return render_template('index.html', dates = dates, csv = nums)
+    print(dates)
+    print(nums)
+    return render_template('index.html', dates=dates, csv=nums)
 
 if __name__ == "__main__":
     app.debug = True
