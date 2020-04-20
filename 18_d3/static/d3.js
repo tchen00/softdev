@@ -9,11 +9,13 @@ var transitionbtn = document.getElementById('transition');
 
 var render = function(e){
   const new_cases = [];
-
+  /* COMMENTED OUT FOR NOW */
+  console.log(data)
   var i;
   for (i = 0; i < data.length; i++) {
     new_cases.push(data[i][0]);
   };
+  //new_cases.push(data[0][0]);
   //console.log(x(new_cases[0]) + 50);
   //var n = create(new_cases);
   //document.getElementsByTagName("body")[0].append(n);
@@ -21,13 +23,17 @@ var render = function(e){
 }
 
 
-var transition = function(e){
+var change = function(e){
+  // d3.select("body").html(""); 
+  //body.innerHTML = "";
   const hosp = [];
+  //hosp.push(data[0][1]);
+
   var i;
   for (i = 0; i < data.length; i++) {
     hosp.push(data[i][1]);
   };
-
+  console.log(hosp)
   d3.select("body").transition(create(hosp));
 
 };
@@ -36,12 +42,14 @@ var transition = function(e){
 const create = function(data){
     console.log(data);
     var width = 1000;
+
     var x = d3.scaleLinear()
       .domain([0, d3.max(data)])
       .range([0, width]);
     var y = d3.scaleBand()
       .domain(d3.range(data.length))
       .range([0, 15 * data.length]);
+
 
   const svg = d3.create("svg")
       .attr("width", width + 200)
@@ -83,4 +91,4 @@ const create = function(data){
 
 
 renderbtn.addEventListener('click', render);
-transitionbtn.addEventListener('click', transition);
+transitionbtn.addEventListener('click', change);
