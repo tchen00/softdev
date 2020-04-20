@@ -13,7 +13,7 @@ def parse():
     with open('covid.csv', 'r') as f:
         reader = csv.reader(f)
         for row in reader:
-            if (row[0][0] != 'D'): # not the first row
+            if (row[0][0] != 'd'): # not the first row
                 #date: <string>, values: <array> [new cases, hospitalized, deaths]
                 #print(row)
                 #print('DONE')
