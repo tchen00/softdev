@@ -9,7 +9,7 @@ var title = document.getElementById('title');
 
 var svg;
 var x,y;
-var width = 1225;
+var width = 1000;
 var height = 500;
 var count = 0; // keeps track of which transition
 
@@ -41,11 +41,15 @@ var render = function(e){
     //console.log(heading);
 
     svg = d3.create("svg")
-                  .attr("width", width)
-                  .attr("height", height + 200) // extra height needed for dates
+                  .attr("width", width + 10)
+                  .attr("height", height + 50) // extra height needed for dates
                   .attr("font-family", "sans-serif")
-                  .attr("font-size", "10")
+                  .attr("font-size", "9")
                   .attr("text-anchor", "end");
+
+    svg.selectAll("g")
+                  .attr("transform", `translate(10,10)`)
+                  .call(d3.axisLeft(x))
 
     // transform bar to correct location according to bandwidth
     var bar = svg.selectAll("g")
@@ -55,7 +59,7 @@ var render = function(e){
 
     // scaled height, scale width, moved to x-axis line
     bar.append("rect")
-        .attr("fill", "red")
+        .attr("fill", "#ff5805")
         .attr("height", function(d) {
           return x(d[0]);
         })
@@ -74,7 +78,7 @@ var render = function(e){
         .attr("x", y.bandwidth() / 2 - 10)
         .attr("text-anchor", "start")
         .attr("transform", function(d) {
-          return "rotate(45, " + (y.bandwidth() / 2 - 10) + ", " + (height + 10) + ")";
+          return "rotate(80, " + (y.bandwidth() / 2 - 10) + ", " + (height + 10) + ")";
         })
         .text(function(d, i) {
             return heading[i];

@@ -3,14 +3,29 @@
     <head>
         <title> COVID-19 </title>
         <link rel="stylesheet" type="text/css" href="../static/style.css">
+        <style>
+              svg {border: 2px solid black; background-color: #fff8eb;}
+              body {  font: 12px/30px Georgia, serif;   margin: 25px 50px 75px 100px;}
+              .button { transition-duration: 0.4s;}
+              .button:hover { background-color: #4CAF50; color: black; font-weight: bold;}
+        </style>
     </head>
 
-    <body>
-        <h2> D3: COVID-19 Data </h3>
-        <button id="render">Render</button>
-        <button id="transition">Transition</button>
+    <body style="background-color: #ded8af;">
+        <h1 style="background-color: #ede6b2; font: bold;"> K18: Come Up For Air </h1>
+        <hr>
+        This data is taken from the official NYC Health website. This chart shows the number of positive coronavirus cases by diagnosis date, hospitalizations by admission date, and deaths by date of death from COVID-19 on a daily basis from March 3 to April 18.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class = "button" id="render" style="border-radius: 12px; background-color: #fbfc97; font-size: 12px; padding: 10px 24px;">Render</button>
+        <button class = "button" id="transition" style="border-radius: 12px; background-color: #fbfc97; font-size: 12px; padding: 10px 24px;">Transition</button>
         <br>
-        <h3 id="title"></h3>
+        <center>
+          <div style="clear: both">
+              <h2 style="float: left; background-color: #ede6b2; border:3px; border-style:solid; border-color:black; padding: 0.001em; ">COVID-19:</h2>
+              <h3 id = "title" style="float: right; background-color: #fffdfa; border:3px; border-style:solid; border-color:#FF0000; padding: 0.005em;"></h3>
+          </div>
+          <br> <br>
+        </center>
         <div id="chart">
         </div>
         <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
