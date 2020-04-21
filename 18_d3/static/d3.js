@@ -10,6 +10,7 @@ var transitionbtn = document.getElementById('transition');
 var svg;
 var x,y;
 var width;
+var count = 0;
 
 var render = function(e){
     const new_cases = [];
@@ -76,49 +77,106 @@ var render = function(e){
 };
 
 var change = function(e){
+    count += 1;
     console.log("change");
-
+    console.log(count)
     const hosp = [];
+    if (count % 3 == 1){
+      var i;
+      for (i = 0; i < data.length; i++) {
+          hosp.push(data[i][1]);
+      };
 
-    var i;
-    for (i = 0; i < data.length; i++) {
-        hosp.push(data[i][1]);
+      width = 1000;
+
+      x = d3.scaleLinear()
+               .domain([0, d3.max(hosp)])
+               .range([0, width]);
+
+      console.log(x(data[0][1]));
+
+      svg.selectAll("rect")
+          .transition()
+          .attr("width", function(d) {
+                return x(d[1]);
+          });
+
+      svg.selectAll(".label")
+          .transition()
+          .attr("x", d => x(d[1] - 10))
+          .text(function(d) {
+            return d[1];
+          });
+
+      svg.selectAll(".date")
+          .transition()
+          .attr("x", d => x(d[1] + 80))
     };
 
-    width = 1000;
+    if (count % 3 == 2){
+      var i;
+      for (i = 0; i < data.length; i++) {
+          hosp.push(data[i][2]);
+      };
 
-    x = d3.scaleLinear()
-             .domain([0, d3.max(hosp)])
-             .range([0, width]);
+      width = 1000;
 
-    console.log(x(data[0][1]));
+      x = d3.scaleLinear()
+               .domain([0, d3.max(hosp)])
+               .range([0, width]);
 
-    svg.selectAll("rect")
-        .transition()
-        .attr("width", function(d) {
-              return x(d[1]);
-        });
+      //console.log(x(data[0][2]));
 
-    svg.selectAll(".label")
-        .transition()
-        .attr("x", d => x(d[1] - 10))
-        .text(function(d) {
-          return d[1];
-        });
+      svg.selectAll("rect")
+          .transition()
+          .attr("width", function(d) {
+                return x(d[2]);
+          });
 
-    svg.selectAll(".date")
-        .transition()
-        .attr("x", d => x(d[1] + 80))
+      svg.selectAll(".label")
+          .transition()
+          .attr("x", d => x(d[2] - 10))
+          .text(function(d) {
+            return d[2];
+          });
 
+      svg.selectAll(".date")
+          .transition()
+          .attr("x", d => x(d[2] + 80))
+    };
+
+    if (count % 3 == 0){
+      var i;
+      for (i = 0; i < data.length; i++) {
+          hosp.push(data[i][0]);
+      };
+      width = 1000;
+
+      x = d3.scaleLinear()
+               .domain([0, d3.max(hosp)])
+               .range([0, width]);
+
+      //console.log(x(data[0][1]));
+
+      svg.selectAll("rect")
+          .transition()
+          .attr("width", function(d) {
+                return x(d[0]);
+          });
+
+      svg.selectAll(".label")
+          .transition()
+          .attr("x", d => x(d[0] - 10))
+          .text(function(d) {
+            return d[0];
+          });
+
+      svg.selectAll(".date")
+          .transition()
+          .attr("x", d => x(d[0] + 80))
+    };
 };
 
 
-
-
-
 transitionbtn.addEventListener('click', change);
-
-
-
-
 renderbtn.addEventListener('click', render);
