@@ -3,180 +3,187 @@
 // K18: Come Up For Air
 // 2020-04-21
 
-//var yes = "we";
 var renderbtn = document.getElementById('render');
 var transitionbtn = document.getElementById('transition');
+var title = document.getElementById('title');
 
 var svg;
 var x,y;
-var width;
-var count = 0;
+var width = 1225;
+var height = 500;
+var count = 0; // keeps track of which transition
+
+var new_cases = [];
+var hosp = [];
+var deaths = [];
+
+// ARRAYS CREATED TO FIND MAX VALUES FOR CORRECT SCALING
+var i;
+for (i = 0; i < data.length; i++) {
+    new_cases.push(data[i][0]);
+    hosp.push(data[i][1]);
+    deaths.push(data[i][2]);
+};
 
 var render = function(e){
-    const new_cases = [];
+    title.innerHTML = "New Cases"; // change title
 
-    var i;
-    for (i = 0; i < data.length; i++) {
-        new_cases.push(data[i][0]);
-    };
-
-    //console.log(new_cases);
-
-    width = 1000;
-
-    console.log(new_cases);
+    // HEIGHT OF BAR
     x = d3.scaleLinear()
               .domain([0, d3.max(new_cases)])
-              .range([0, width]);
-    console.log(x(data[0][0] - 25));
+              .range([0, height - 50]);
+
+    // WIDTH OF BAR
     y = d3.scaleBand()
-              .domain(d3.range(data.length))
-              .range([0, 15 * data.length]);
+              .domain(heading)
+              .range([0, width]);
+
+    //console.log(heading);
 
     svg = d3.create("svg")
-                  .attr("width", width + 200)
-                  .attr("height", y.range()[1])
+                  .attr("width", width)
+                  .attr("height", height + 200) // extra height needed for dates
                   .attr("font-family", "sans-serif")
                   .attr("font-size", "10")
                   .attr("text-anchor", "end");
 
-    const bar = svg.selectAll("g")
+    // transform bar to correct location according to bandwidth
+    var bar = svg.selectAll("g")
                     .data(data)
                     .join("g")
-                    .attr("transform", (d, i) => `translate(0,${y(i)})`);
+                    .attr("transform", (d, i) => `translate(${y(heading[i])}, 0)`);
 
+    // scaled height, scale width, moved to x-axis line
     bar.append("rect")
-        .attr("fill", "steelblue")
-        .attr("width", function(d) {
+        .attr("fill", "red")
+        .attr("height", function(d) {
           return x(d[0]);
         })
-        .attr("height", y.bandwidth() - 1);
+        .attr("width", y.bandwidth() - 1) // -1 for padding
+        .attr("y", function(d) {
+          return height - x(d[0]);
+        });
 
+    // dates listed under x-axis line, rotated around origin of text to fit
     bar.append("text")
         .attr("class", "date")
         .attr("fill", "black")
-        .attr("x", d => x(d[0] + 225))
-        .attr("y", y.bandwidth() / 2 + 3)
-        .attr("dy", "0.35")
+        .attr("y", function(d) {
+          return height + 10;
+        })
+        .attr("x", y.bandwidth() / 2 - 10)
+        .attr("text-anchor", "start")
+        .attr("transform", function(d) {
+          return "rotate(45, " + (y.bandwidth() / 2 - 10) + ", " + (height + 10) + ")";
+        })
         .text(function(d, i) {
             return heading[i];
         });
 
+    // data numbers listed above bars
     bar.append("text")
         .attr("class", "label")
-        .attr("fill", "white")
-        .attr("x", d => x(d[0] - 25))
-        .attr("y", y.bandwidth() / 2 + 3)
-        .attr("dy", "0.35")
+        .attr("fill", "black")
+        .style("text-anchor", "middle")
+        .attr("y", d => height - x(d[0]) - 5)
+        .attr("x", y.bandwidth() / 2 - 1)
+        .attr("dx", "0.35")
         .text(function(d) {
             return d[0];
         });
 
     document.getElementsByTagName("body")[0].append(svg.node());
-
 };
 
 var change = function(e){
     count += 1;
-    console.log("change");
     console.log(count)
-    const hosp = [];
-    if (count % 3 == 1){
-      var i;
-      for (i = 0; i < data.length; i++) {
-          hosp.push(data[i][1]);
-      };
 
-      width = 1000;
+    if (count % 3 == 1){ // first transition, hospitalizations
+      title.innerHTML = "Hospitalizations";
 
       x = d3.scaleLinear()
                .domain([0, d3.max(hosp)])
-               .range([0, width]);
-
-      console.log(x(data[0][1]));
-
-      svg.selectAll("rect")
-          .transition()
-          .attr("width", function(d) {
-                return x(d[1]);
-          });
-
-      svg.selectAll(".label")
-          .transition()
-          .attr("x", d => x(d[1] - 10))
-          .text(function(d) {
-            return d[1];
-          });
-
-      svg.selectAll(".date")
-          .transition()
-          .attr("x", d => x(d[1] + 80))
-    };
-
-    if (count % 3 == 2){
-      var i;
-      for (i = 0; i < data.length; i++) {
-          hosp.push(data[i][2]);
-      };
-
-      width = 1000;
-
-      x = d3.scaleLinear()
-               .domain([0, d3.max(hosp)])
-               .range([0, width]);
-
-      //console.log(x(data[0][2]));
-
-      svg.selectAll("rect")
-          .transition()
-          .attr("width", function(d) {
-                return x(d[2]);
-          });
-
-      svg.selectAll(".label")
-          .transition()
-          .attr("x", d => x(d[2] - 10))
-          .text(function(d) {
-            return d[2];
-          });
-
-      svg.selectAll(".date")
-          .transition()
-          .attr("x", d => x(d[2] + 80))
-    };
-
-    if (count % 3 == 0){
-      var i;
-      for (i = 0; i < data.length; i++) {
-          hosp.push(data[i][0]);
-      };
-      width = 1000;
-
-      x = d3.scaleLinear()
-               .domain([0, d3.max(hosp)])
-               .range([0, width]);
+               .range([0, height - 50]);
 
       //console.log(x(data[0][1]));
 
       svg.selectAll("rect")
           .transition()
-          .attr("width", function(d) {
-                return x(d[0]);
+          .attr("height", function(d) {
+                return x(d[1]);
+          })
+          .attr("y", function(d) {
+            return height - x(d[1]);
           });
 
       svg.selectAll(".label")
           .transition()
-          .attr("x", d => x(d[0] - 10))
+          .attr("y", d => height - x(d[1]) - 5)
+          .text(function(d) {
+            return d[1];
+          });
+
+    };
+
+    if (count % 3 == 2){ // second transition, deaths
+      title.innerHTML = "Deaths";
+
+
+      x = d3.scaleLinear()
+               .domain([0, d3.max(deaths)])
+               .range([0, height - 50]);
+
+      //console.log(x(data[0][2]));
+
+      svg.selectAll("rect")
+          .transition()
+          .attr("height", function(d) {
+                return x(d[2]);
+          })
+          .attr("y", function(d) {
+                return height - x(d[2]);
+          });
+
+      svg.selectAll(".label")
+          .transition()
+          .attr("y", d => height - x(d[2]) - 5)
+          .text(function(d) {
+            return d[2];
+          });
+    };
+
+    if (count % 3 == 0){ // third transition, back to the start
+      title.innerHTML = "New Cases";
+
+      x = d3.scaleLinear()
+               .domain([0, d3.max(new_cases)])
+               .range([0, height - 50]);
+
+      //console.log(x(data[0][1]));
+
+      svg.selectAll("rect")
+          .transition()
+          .attr("height", function(d) {
+                return x(d[0]);
+          })
+          .attr("y", function(d) {
+                return height - x(d[0]);
+          });
+
+      svg.selectAll(".label")
+          .transition()
+          .attr("y", d => height - x(d[0]) - 5)
           .text(function(d) {
             return d[0];
           });
-
-      svg.selectAll(".date")
-          .transition()
-          .attr("x", d => x(d[0] + 80))
-    };
+      };
 };
 
-
+renderbtn.addEventListener('click', function(e) {
+    if (document.getElementsByTagName("svg")[0] == undefined) {
+      // don't create again if it's already there
+      render();
+    }
+});
 transitionbtn.addEventListener('click', change);
-renderbtn.addEventListener('click', render);
